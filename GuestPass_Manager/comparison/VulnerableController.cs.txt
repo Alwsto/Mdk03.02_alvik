@@ -1,0 +1,18 @@
+// УЧЕБНЫЙ АНТИПРИМЕР. Не компилируется и не регистрируется в API.
+// Сконструирован автором для анализа варианта 5: исходный C# в задании отсутствует.
+// Нельзя развертывать. F01: IDOR; F02: нет аутентификации; F03: нет аудита.
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using GuestPass.Api;
+
+[ApiController]
+[Route("api/passes")]
+public sealed class VulnerableController(PassDbContext db) : ControllerBase
+{
+    [HttpGet("{id}")]
+    public async Task<IActionResult> Get(int id)
+    {
+        var pass = await db.Passes.FirstOrDefaultAsync(x => x.Id == id);
+        return pass is null ? NotFound() : Ok(pass);
+    }
+}

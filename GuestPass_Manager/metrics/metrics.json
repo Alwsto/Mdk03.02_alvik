@@ -1,0 +1,252 @@
+{
+  "Tool": "GuestPass educational metrics / Roslyn syntax / 1.0",
+  "Method": "CC=1\u002Bif/for/foreach/while/do/catch/non-default switch labels/?:/\u0026\u0026/||/??/conditional access. LOC=distinct original body lines with tokens except braces. Halstead: operands=identifiers and literals; operators=remaining tokens except braces/parens/brackets/comma/semicolon. V=(N1\u002BN2)*log2(n1\u002Bn2). MI=max(0,(171-5.2*ln(V)-0.23*CC-16.2*ln(LOC))*100/171), no comment term. CBO=distinct project-defined type names referenced syntactically. LCOM4=connected components of instance methods sharing instance fields/primary constructor dependencies or directly calling each other; constructors/static methods excluded.",
+  "Results": [
+    {
+      "File": "../../comparison/BeforeRefactoring.cs.txt",
+      "Sha256": "64a408fbfc70da63681c605d9203ac515501380dfcd90912165b55b1ea92320a",
+      "Class": "PassesControllerBefore",
+      "Methods": [
+        {
+          "Method": "Get",
+          "CC": 6,
+          "LOC": 5,
+          "TotalOperators": 30,
+          "TotalOperands": 37,
+          "UniqueOperators": 14,
+          "UniqueOperands": 27,
+          "Volume": 358.956,
+          "MI": 66.06,
+          "Decisions": [
+            "IfStatement",
+            "IfStatement",
+            "LogicalOrExpression",
+            "ConditionalAccessExpression",
+            "LogicalAndExpression"
+          ]
+        },
+        {
+          "Method": "Create",
+          "CC": 2,
+          "LOC": 11,
+          "TotalOperators": 39,
+          "TotalOperands": 58,
+          "UniqueOperators": 7,
+          "UniqueOperands": 34,
+          "Volume": 519.6825,
+          "MI": 58,
+          "Decisions": [
+            "IfStatement"
+          ]
+        }
+      ],
+      "ControllerOrClassSummary": {
+        "MethodCount": 2,
+        "SumCC": 8,
+        "MaxCC": 6,
+        "BodyCodeLines": 16,
+        "MeanMI": 62.03,
+        "CBO_ProjectTypes": 4,
+        "Dependencies": [
+          "CreatePassRequest",
+          "GuestPass",
+          "PassDbContext",
+          "PassResponse"
+        ],
+        "LCOM4": 1,
+        "FieldUsage": [
+          {
+            "Method": "Get",
+            "Fields": [
+              "db"
+            ]
+          },
+          {
+            "Method": "Create",
+            "Fields": [
+              "db",
+              "validator"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "File": "PassesController.cs",
+      "Sha256": "30bf5398cf1de6df47f01d7c1d6dec0f31f1449caecb156c66dd439e26aef8bb",
+      "Class": "PassesController",
+      "Methods": [
+        {
+          "Method": "Get",
+          "CC": 3,
+          "LOC": 6,
+          "TotalOperators": 13,
+          "TotalOperands": 18,
+          "UniqueOperators": 7,
+          "UniqueOperands": 14,
+          "Volume": 136.1618,
+          "MI": 67.68,
+          "Decisions": []
+        },
+        {
+          "Method": "Create",
+          "CC": 2,
+          "LOC": 5,
+          "TotalOperators": 21,
+          "TotalOperands": 33,
+          "UniqueOperators": 7,
+          "UniqueOperands": 24,
+          "Volume": 267.5266,
+          "MI": 67.49,
+          "Decisions": [
+            "IfStatement"
+          ]
+        }
+      ],
+      "ControllerOrClassSummary": {
+        "MethodCount": 2,
+        "SumCC": 5,
+        "MaxCC": 3,
+        "BodyCodeLines": 11,
+        "MeanMI": 67.59,
+        "CBO_ProjectTypes": 4,
+        "Dependencies": [
+          "CreatePassRequest",
+          "PassResponse",
+          "PassService",
+          "ReadOutcome"
+        ],
+        "LCOM4": 1,
+        "FieldUsage": [
+          {
+            "Method": "Get",
+            "Fields": [
+              "service"
+            ]
+          },
+          {
+            "Method": "Create",
+            "Fields": [
+              "service",
+              "validator"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "File": "PassService.cs",
+      "Sha256": "3bfc153995bb743d9ced670ac3760a35de0d1013f907a7831c9009544445e71d",
+      "Class": "PassAccess",
+      "Methods": [
+        {
+          "Method": "CanRead",
+          "CC": 4,
+          "LOC": 2,
+          "TotalOperators": 10,
+          "TotalOperands": 12,
+          "UniqueOperators": 5,
+          "UniqueOperands": 10,
+          "Volume": 85.9516,
+          "MI": 79.35,
+          "Decisions": [
+            "LogicalAndExpression",
+            "ConditionalAccessExpression",
+            "LogicalOrExpression"
+          ]
+        }
+      ],
+      "ControllerOrClassSummary": {
+        "MethodCount": 1,
+        "SumCC": 4,
+        "MaxCC": 4,
+        "BodyCodeLines": 2,
+        "MeanMI": 79.35,
+        "CBO_ProjectTypes": 1,
+        "Dependencies": [
+          "GuestPass"
+        ],
+        "LCOM4": 0,
+        "FieldUsage": []
+      }
+    },
+    {
+      "File": "PassService.cs",
+      "Sha256": "3bfc153995bb743d9ced670ac3760a35de0d1013f907a7831c9009544445e71d",
+      "Class": "PassService",
+      "Methods": [
+        {
+          "Method": "ReadAsync",
+          "CC": 3,
+          "LOC": 4,
+          "TotalOperators": 22,
+          "TotalOperands": 25,
+          "UniqueOperators": 10,
+          "UniqueOperands": 19,
+          "Volume": 228.3251,
+          "MI": 69.95,
+          "Decisions": [
+            "IfStatement",
+            "IfStatement"
+          ]
+        },
+        {
+          "Method": "CreateAsync",
+          "CC": 1,
+          "LOC": 7,
+          "TotalOperators": 15,
+          "TotalOperands": 24,
+          "UniqueOperators": 5,
+          "UniqueOperands": 16,
+          "Volume": 171.3004,
+          "MI": 65.79,
+          "Decisions": []
+        },
+        {
+          "Method": "Map",
+          "CC": 1,
+          "LOC": 1,
+          "TotalOperators": 5,
+          "TotalOperands": 8,
+          "UniqueOperators": 2,
+          "UniqueOperands": 5,
+          "Volume": 36.4956,
+          "MI": 88.93,
+          "Decisions": []
+        }
+      ],
+      "ControllerOrClassSummary": {
+        "MethodCount": 3,
+        "SumCC": 5,
+        "MaxCC": 3,
+        "BodyCodeLines": 12,
+        "MeanMI": 74.89,
+        "CBO_ProjectTypes": 7,
+        "Dependencies": [
+          "CreatePassRequest",
+          "GuestPass",
+          "PassAccess",
+          "PassDbContext",
+          "PassResponse",
+          "ReadOutcome",
+          "ReadPassResult"
+        ],
+        "LCOM4": 1,
+        "FieldUsage": [
+          {
+            "Method": "ReadAsync",
+            "Fields": [
+              "db"
+            ]
+          },
+          {
+            "Method": "CreateAsync",
+            "Fields": [
+              "db"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

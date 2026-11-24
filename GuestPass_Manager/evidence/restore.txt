@@ -1,0 +1,20 @@
+
+Вас приветствует .NET 8.0!
+---------------------
+Версия пакета SDK: 8.0.428
+
+----------------
+Установлен сертификат разработки ASP.NET Core HTTPS.
+Чтобы доверять сертификату, выполните команду "dotnet dev-certs https --trust"
+Дополнительные сведения об HTTPS: https://aka.ms/dotnet-https
+
+----------------
+Как написать свое первое приложение: https://aka.ms/dotnet-hello-world
+Узнать о новых возможностях: https://aka.ms/dotnet-whats-new
+Просмотреть документацию: https://aka.ms/dotnet-docs
+Сообщить о проблемах и найти исходный код на GitHub: https://github.com/dotnet/core
+Для просмотра доступных команд введите команду "dotnet --help" или посетите следующую страницу: https://aka.ms/dotnet-cli.
+--------------------------------------------------------------------------------------
+  Определение проектов для восстановления...
+  Восстановлен C:\Users\Alwst\Documents\Codex\2026-11-23\vl\work\guestpass\src\GuestPass.Api\GuestPass.Api.csproj (за 18,81 с).
+  Восстановлен C:\Users\Alwst\Documents\Codex\2026-11-23\vl\work\guestpass\tests\GuestPass.Tests\GuestPass.Tests.csproj (за 19,42 с).

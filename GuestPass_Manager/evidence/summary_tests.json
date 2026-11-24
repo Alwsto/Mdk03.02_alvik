@@ -1,0 +1,262 @@
+{
+  "executed": true,
+  "sdk": "8.0.428",
+  "runtime": "8.0.34",
+  "targetFramework": "net8.0",
+  "total": 39,
+  "passed": 39,
+  "failed": 0,
+  "skipped": 0,
+  "unit": 18,
+  "integration": 21,
+  "run": {
+    "creation": "2026-11-23T11:52:12.6190876+03:00",
+    "queuing": "2026-11-23T11:52:12.6190879+03:00",
+    "start": "2026-11-23T11:52:10.9473134+03:00",
+    "finish": "2026-11-23T11:52:14.8039557+03:00"
+  },
+  "coverage": {
+    "line-rate": "0.995",
+    "branch-rate": "0.8332999999999999",
+    "lines-covered": "201",
+    "lines-valid": "202",
+    "branches-covered": "50",
+    "branches-valid": "60"
+  },
+  "tests": [
+    {
+      "name": "GuestPass.Tests.IntegrationTests.I01_OwnerReadsOwnPassAndAuditIsDurable",
+      "result": "Passed",
+      "duration": "00:00:00.0465208",
+      "kind": "integration"
+    },
+    {
+      "name": "GuestPass.Tests.IntegrationTests.I02_IdorReturns403AndRecordsDenied",
+      "result": "Passed",
+      "duration": "00:00:00.0343682",
+      "kind": "integration"
+    },
+    {
+      "name": "GuestPass.Tests.IntegrationTests.I03_GuardReadsOtherPass",
+      "result": "Passed",
+      "duration": "00:00:00.0373934",
+      "kind": "integration"
+    },
+    {
+      "name": "GuestPass.Tests.IntegrationTests.I04_AnonymousRequest401IsAudited",
+      "result": "Passed",
+      "duration": "00:00:00.0284828",
+      "kind": "integration"
+    },
+    {
+      "name": "GuestPass.Tests.IntegrationTests.I05_MissingPass404",
+      "result": "Passed",
+      "duration": "00:00:00.0464754",
+      "kind": "integration"
+    },
+    {
+      "name": "GuestPass.Tests.IntegrationTests.I06_Create201AndReadRoundtrip",
+      "result": "Passed",
+      "duration": "00:00:01.0268044",
+      "kind": "integration"
+    },
+    {
+      "name": "GuestPass.Tests.IntegrationTests.I07_VisitorCannotCreate",
+      "result": "Passed",
+      "duration": "00:00:00.0292113",
+      "kind": "integration"
+    },
+    {
+      "name": "GuestPass.Tests.IntegrationTests.I08_InvalidInput400AndNoRow",
+      "result": "Passed",
+      "duration": "00:00:00.0499968",
+      "kind": "integration"
+    },
+    {
+      "name": "GuestPass.Tests.IntegrationTests.I09_RateLimit429IsAudited",
+      "result": "Passed",
+      "duration": "00:00:00.0496940",
+      "kind": "integration"
+    },
+    {
+      "name": "GuestPass.Tests.IntegrationTests.I10_AuditFailure503RollsBackCreation",
+      "result": "Passed",
+      "duration": "00:00:00.0721357",
+      "kind": "integration"
+    },
+    {
+      "name": "GuestPass.Tests.IntegrationTests.I11_OwnerSpoofingInJsonHasNoEffect",
+      "result": "Passed",
+      "duration": "00:00:00.0420494",
+      "kind": "integration"
+    },
+    {
+      "name": "GuestPass.Tests.IntegrationTests.I12_SqlLookingNameIsLiteralData",
+      "result": "Passed",
+      "duration": "00:00:00.0474309",
+      "kind": "integration"
+    },
+    {
+      "name": "GuestPass.Tests.IntegrationTests.I13_RealBearerValidation(scenario: \"audience\", expectedStatus: 401)",
+      "result": "Passed",
+      "duration": "00:00:00.0678710",
+      "kind": "integration"
+    },
+    {
+      "name": "GuestPass.Tests.IntegrationTests.I13_RealBearerValidation(scenario: \"empty-subject\", expectedStatus: 403)",
+      "result": "Passed",
+      "duration": "00:00:00.0349745",
+      "kind": "integration"
+    },
+    {
+      "name": "GuestPass.Tests.IntegrationTests.I13_RealBearerValidation(scenario: \"expired\", expectedStatus: 401)",
+      "result": "Passed",
+      "duration": "00:00:00.0803962",
+      "kind": "integration"
+    },
+    {
+      "name": "GuestPass.Tests.IntegrationTests.I13_RealBearerValidation(scenario: \"issuer\", expectedStatus: 401)",
+      "result": "Passed",
+      "duration": "00:00:00.0549580",
+      "kind": "integration"
+    },
+    {
+      "name": "GuestPass.Tests.IntegrationTests.I13_RealBearerValidation(scenario: \"signature\", expectedStatus: 401)",
+      "result": "Passed",
+      "duration": "00:00:00.0457830",
+      "kind": "integration"
+    },
+    {
+      "name": "GuestPass.Tests.IntegrationTests.I13_RealBearerValidation(scenario: \"subject\", expectedStatus: 403)",
+      "result": "Passed",
+      "duration": "00:00:00.0580199",
+      "kind": "integration"
+    },
+    {
+      "name": "GuestPass.Tests.IntegrationTests.I13_RealBearerValidation(scenario: \"valid\", expectedStatus: 200)",
+      "result": "Passed",
+      "duration": "00:00:00.0353843",
+      "kind": "integration"
+    },
+    {
+      "name": "GuestPass.Tests.IntegrationTests.I14_TestHeadersCannotBypassRealAuthentication",
+      "result": "Passed",
+      "duration": "00:00:00.0275923",
+      "kind": "integration"
+    },
+    {
+      "name": "GuestPass.Tests.IntegrationTests.I15_AnonymousRateLimitAndAudit",
+      "result": "Passed",
+      "duration": "00:00:00.0588276",
+      "kind": "integration"
+    },
+    {
+      "name": "GuestPass.Tests.UnitTests.U01_NameLengthBoundary(length: 0, expected: False)",
+      "result": "Passed",
+      "duration": "00:00:00.0008998",
+      "kind": "unit"
+    },
+    {
+      "name": "GuestPass.Tests.UnitTests.U01_NameLengthBoundary(length: 1, expected: True)",
+      "result": "Passed",
+      "duration": "00:00:00.0002173",
+      "kind": "unit"
+    },
+    {
+      "name": "GuestPass.Tests.UnitTests.U01_NameLengthBoundary(length: 100, expected: True)",
+      "result": "Passed",
+      "duration": "00:00:00.0000464",
+      "kind": "unit"
+    },
+    {
+      "name": "GuestPass.Tests.UnitTests.U01_NameLengthBoundary(length: 101, expected: False)",
+      "result": "Passed",
+      "duration": "00:00:00.0001434",
+      "kind": "unit"
+    },
+    {
+      "name": "GuestPass.Tests.UnitTests.U02_InvalidNames(name: \"   \")",
+      "result": "Passed",
+      "duration": "00:00:00.0002619",
+      "kind": "unit"
+    },
+    {
+      "name": "GuestPass.Tests.UnitTests.U02_InvalidNames(name: \"Имя\\nподдельный аудит\")",
+      "result": "Passed",
+      "duration": "00:00:00.0001850",
+      "kind": "unit"
+    },
+    {
+      "name": "GuestPass.Tests.UnitTests.U02_InvalidNames(name: null)",
+      "result": "Passed",
+      "duration": "00:00:00.0000352",
+      "kind": "unit"
+    },
+    {
+      "name": "GuestPass.Tests.UnitTests.U03_DurationBoundary(seconds: 0, expected: False)",
+      "result": "Passed",
+      "duration": "00:00:00.0427603",
+      "kind": "unit"
+    },
+    {
+      "name": "GuestPass.Tests.UnitTests.U03_DurationBoundary(seconds: 1, expected: True)",
+      "result": "Passed",
+      "duration": "00:00:00.0000415",
+      "kind": "unit"
+    },
+    {
+      "name": "GuestPass.Tests.UnitTests.U03_DurationBoundary(seconds: 604800, expected: True)",
+      "result": "Passed",
+      "duration": "00:00:00.0004088",
+      "kind": "unit"
+    },
+    {
+      "name": "GuestPass.Tests.UnitTests.U03_DurationBoundary(seconds: 604801, expected: False)",
+      "result": "Passed",
+      "duration": "00:00:00.0000796",
+      "kind": "unit"
+    },
+    {
+      "name": "GuestPass.Tests.UnitTests.U04_PastAndNonUtcRejected",
+      "result": "Passed",
+      "duration": "00:00:00.0003397",
+      "kind": "unit"
+    },
+    {
+      "name": "GuestPass.Tests.UnitTests.U05_ObjectAuthorization(subject: \"other\", role: \"Employee\", allowed: False)",
+      "result": "Passed",
+      "duration": "00:00:00.0003004",
+      "kind": "unit"
+    },
+    {
+      "name": "GuestPass.Tests.UnitTests.U05_ObjectAuthorization(subject: \"other\", role: \"Guard\", allowed: True)",
+      "result": "Passed",
+      "duration": "00:00:00.0018056",
+      "kind": "unit"
+    },
+    {
+      "name": "GuestPass.Tests.UnitTests.U05_ObjectAuthorization(subject: \"owner\", role: \"Employee\", allowed: True)",
+      "result": "Passed",
+      "duration": "00:00:00.0000198",
+      "kind": "unit"
+    },
+    {
+      "name": "GuestPass.Tests.UnitTests.U06_MissingInvalidOrShortKeyRejected(key: \"YWJj\")",
+      "result": "Passed",
+      "duration": "00:00:00.0004354",
+      "kind": "unit"
+    },
+    {
+      "name": "GuestPass.Tests.UnitTests.U06_MissingInvalidOrShortKeyRejected(key: \"not-base64\")",
+      "result": "Passed",
+      "duration": "00:00:00.0048532",
+      "kind": "unit"
+    },
+    {
+      "name": "GuestPass.Tests.UnitTests.U06_MissingInvalidOrShortKeyRejected(key: null)",
+      "result": "Passed",
+      "duration": "00:00:00.0001577",
+      "kind": "unit"
+    }
+  ]
+}

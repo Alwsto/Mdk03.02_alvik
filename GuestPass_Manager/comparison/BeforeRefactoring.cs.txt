@@ -1,0 +1,43 @@
+// Безопасная исходная версия для метрик ПР4. Вне build: не дублирует маршрут.
+// Авторизация, валидация и HTTP-результаты совпадают с итоговым контроллером.
+// Для аудита используется тот же middleware, что и после рефакторинга.
+using System.Security.Claims;
+using FluentValidation;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using GuestPass.Api;
+
+[ApiController]
+[Route("api/passes")]
+public sealed class PassesControllerBefore(PassDbContext db, IValidator<CreatePassRequest> validator) : ControllerBase
+{
+    [HttpGet("{id:int:min(1)}")]
+    [Authorize(Policy = "PassRead")]
+    public async Task<ActionResult<PassResponse>> Get(int id, CancellationToken token)
+    {
+        var pass = await db.Passes.AsNoTracking().SingleOrDefaultAsync(x => x.Id == id, token);
+        if (pass is null) return NotFound();
+        if (User.Identity?.IsAuthenticated != true ||
+            (!User.IsInRole("Guard") && User.FindFirstValue("sub") != pass.OwnerId)) return Forbid();
+        return Ok(new PassResponse(pass.Id, pass.GuestName, pass.ValidFromUtc, pass.ValidUntilUtc));
+    }
+
+    [HttpPost]
+    [Authorize(Policy = "PassCreate")]
+    public async Task<ActionResult<PassResponse>> Create(CreatePassRequest request, CancellationToken token)
+    {
+        var validation = await validator.ValidateAsync(request, token);
+        if (!validation.IsValid) return BadRequest(new ValidationProblemDetails(validation.ToDictionary()));
+        var pass = new GuestPass.Api.GuestPass
+        {
+            OwnerId = User.FindFirstValue("sub")!, GuestName = request.GuestName.Trim(),
+            ValidFromUtc = request.ValidFromUtc, ValidUntilUtc = request.ValidUntilUtc
+        };
+        db.Passes.Add(pass);
+        await db.SaveChangesAsync(token);
+        HttpContext.Items["CreatedPassId"] = pass.Id;
+        return CreatedAtAction(nameof(Get), new { id = pass.Id },
+            new PassResponse(pass.Id, pass.GuestName, pass.ValidFromUtc, pass.ValidUntilUtc));
+    }
+}
